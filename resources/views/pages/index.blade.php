@@ -16,11 +16,10 @@
         <div class="card-body">
             <h5 class="card-title">{{$post->title}}</h5>
             <p class="card-text">{{$post->description}}</p>
-            <a href="#" class="btn btn-primary">Read more</a>
+            <a href="{{route('getPost',[$post->category->slug, $post->slug])}}" class="btn btn-primary">Read more</a>
         </div>
     </div>
     @endforeach
-    <nav aria-label="Page navigation example">
+    {{$posts->links()}}
 
-    </nav>
 @endsection
